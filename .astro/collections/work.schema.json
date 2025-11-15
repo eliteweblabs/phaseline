@@ -1,0 +1,133 @@
+{
+  "$ref": "#/definitions/work",
+  "definitions": {
+    "work": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imageThumbnail": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "video": {
+          "type": "string"
+        },
+        "introduction": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "subtitle",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        "whatWeDid": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "images": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "subtitle",
+            "images",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        "feedback": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            },
+            "clientFeedback": {
+              "type": "object",
+              "properties": {
+                "blockquote": {
+                  "type": "string"
+                },
+                "figcaption": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "blockquote",
+                "figcaption"
+              ],
+              "additionalProperties": false
+            },
+            "body": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "subtitle",
+            "clientFeedback",
+            "body"
+          ],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "subtitle",
+        "description",
+        "list",
+        "imageThumbnail",
+        "introduction",
+        "whatWeDid",
+        "feedback"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
