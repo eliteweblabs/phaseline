@@ -11,8 +11,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  // Update this with your production site URL when ready
-  site: "https://localhost:4321", // Placeholder - update with your production URL
+  site: "https://solid-production.up.railway.app",
   integrations: [
     icon(),
     sitemap(),
