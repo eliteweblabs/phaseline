@@ -48,7 +48,8 @@ export default defineConfig({
     }),
     react(),
     markdoc(),
-    keystatic(),
+    // Keystatic only in dev mode (local storage) - comment out for production static builds
+    ...(process.env.NODE_ENV !== 'production' ? [keystatic()] : []),
   ],
   vite: {
     plugins: [tailwindcss()],
