@@ -11,7 +11,7 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://solid-production.up.railway.app",
+  site: process.env.PUBLIC_SITE_URL || "https://localhost:4321",
   integrations: [
     icon(),
     sitemap(),
