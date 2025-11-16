@@ -76,13 +76,16 @@ function getFilePath(urlPath) {
 
 const server = createServer((req, res) => {
   try {
-    // Log request for debugging
-    console.log(`${req.method} ${req.url}`)
+    // Log request for debugging (always log, even if it fails)
+    const requestInfo = `${req.method} ${req.url} - ${req.headers['user-agent'] || 'unknown'}`
+    console.log(`📥 ${requestInfo}`)
+    console.log(`🔗 Headers:`, JSON.stringify(req.headers))
     
     // Health check endpoint
     if (req.url === '/health' || req.url === '/healthz') {
+      console.log(`✅ Health check requested`)
       res.writeHead(200, { 'Content-Type': 'application/json' })
-      res.end(JSON.stringify({ status: 'ok', timestamp: new Date().toISOString() }))
+      res.end(JSON.stringify({ status: 'ok', timestamp: new Date().toISOString(), port: PORT }))
       return
     }
     
@@ -122,6 +125,8 @@ server.listen(PORT, HOST, () => {
   console.log(`📁 Serving files from: ${DIST_DIR}`)
   console.log(`🔌 PORT environment variable: ${process.env.PORT || 'not set, using default 4321'}`)
   console.log(`🌐 Server is ready to accept connections`)
+  console.log(`📡 Listening on all interfaces (0.0.0.0)`)
+  console.log(`🚀 Ready to serve requests!`)
   
   // Verify dist directory exists
   try {
@@ -137,6 +142,15 @@ server.listen(PORT, HOST, () => {
     }
   } catch (err) {
     console.error(`❌ Dist directory error:`, err.message)
+  }
+  
+  // Test that we can actually serve a file
+  try {
+    const testPath = resolve(DIST_DIR, 'index.html')
+    const testContent = readFileSync(testPath)
+    console.log(`✅ Test read successful: ${testContent.length} bytes from index.html`)
+  } catch (err) {
+    console.error(`❌ Test read failed:`, err.message)
   }
 })
 
