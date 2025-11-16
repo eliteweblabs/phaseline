@@ -51,7 +51,12 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 				<Col span="12">
 					<div class="footer__copy">
 						<div class="footer__copy-text">
-							<p class="footer__copywrite">{subFooter.copywriteText}</p>
+							<p class="footer__copywrite">
+								© {subFooter.copywriteText}
+								{new Date().getFullYear()}
+								<br />
+								<span class="footer__copywrite-license">license: CSL 120031, HIC 212431</span>
+							</p>
 							<div class="footer__social">
 								{socialLinks.map((social) => <a href={social.link}>{social.name}</a>)}
 							</div>

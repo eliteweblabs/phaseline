@@ -1,6 +1,6 @@
 ---
-title: 'Bloom Agency'
-subtitle: 'A fast-growing SaaS startup building collaboration tools for remote tech teams.'
+title: '165 Cedar St'
+subtitle: 'Somerville, MA.'
 description: 'Bloom came to us with a vision: vibrant, fearless design to match their Gen Z clients. We delivered a bold new brand identity that feels young but strategic, with a dynamic color system, expressive type, and content-first layouts that pop on social and the web.'
 list:
   - 'Full brand refresh'
@@ -20,11 +20,12 @@ whatWeDid:
   title: 'What We Brought'
   subtitle: 'From brand to conversion-first landing pages.'
   images:
-    - '/assets/images/image-11.webp'
-    - '/assets/images/image-05.webp'
-    - '/assets/images/image-15.webp'
-    - '/assets/images/image-17.webp'
-    - '/assets/images/image-18.webp'
+    - '/collections/work/165-cedar-1.webp'
+    - '/collections/work/165-cedar-2.jpg'
+    - '/collections/work/165-cedar-3.jpg'
+    - '/collections/work/165-cedar-4.jpg'
+    - '/collections/work/165-cedar-5.jpg'
+
   body: >
     <p>We overhauled Bloom’s visual identity from the ground up, with a bold type system, flexible grids, and a color palette ready for social and web. Motion brought the brand to life, while detailed guidelines made it scalable.</p>
     <p>Landing pages for product rollouts were designed to convert fast, using a clear hierarchy and custom illustrations that reflected Bloom’s voice and vibrancy.</p>

@@ -1,7 +1,7 @@
 {
 	"footerAbout": {
 		"aboutText": "Tired of boring? Let’s talk.",
-		"aboutLink": "hello@toki.com"
+		"aboutLink": "reggie@solidboston.com"
 	},
 	"footerColumns": [
 		{
@@ -30,6 +30,6 @@
 		}
 	],
 	"subFooter": {
-		"copywriteText": "2025© Toki Studio"
+		"copywriteText": "Solid Builders"
 	}
 }
