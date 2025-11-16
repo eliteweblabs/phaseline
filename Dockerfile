@@ -49,7 +49,7 @@ RUN echo "=== Contents of dist ===" && \
 EXPOSE 8080
 
 # Start serve with Railway's PORT
-# -s flag enables single-page app mode (serves index.html for all routes)
 # serve binds to 0.0.0.0 by default when using -l flag
-CMD ["sh", "-c", "PORT=${PORT:-8080} serve -s dist -l $PORT"]
+# No -s flag needed - serve handles static files correctly by default
+CMD ["sh", "-c", "PORT=${PORT:-8080} serve dist -l $PORT"]
 
