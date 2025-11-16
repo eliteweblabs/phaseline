@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production=false
+RUN npm ci
 
 # Copy source files
 COPY . .
@@ -14,9 +14,22 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Expose port (Railway will set PORT env var)
+# Production stage with nginx
+FROM nginx:alpine
+
+# Copy built files to nginx
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copy nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy startup script
+COPY start-nginx.sh /start-nginx.sh
+RUN chmod +x /start-nginx.sh
+
+# Expose port
 EXPOSE 8080
 
-# Start the server
-CMD ["node", "server.js"]
+# Start nginx with dynamic port
+CMD ["/start-nginx.sh"]
 
