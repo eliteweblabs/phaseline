@@ -2,6 +2,8 @@
 // ------------
 // Description: The configuration file for the website.
 
+// buiild tst
+
 export interface Logo {
 	src: string
 	srcDark: string
