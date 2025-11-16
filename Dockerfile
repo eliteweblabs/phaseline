@@ -17,8 +17,7 @@ RUN npm run build
 # Production stage with nginx
 FROM nginx:alpine
 
-# Copy built files to nginx
-# Copy contents of dist directory (the . means contents, not the directory itself)
+# Copy contents of dist directory
 COPY --from=builder /app/dist/. /usr/share/nginx/html/
 
 # Verify files were copied correctly
@@ -28,6 +27,10 @@ RUN echo "=== Contents of /usr/share/nginx/html ===" && \
     ls -la /usr/share/nginx/html/logo*.webp 2>&1 || echo "Logo files not found" && \
     echo "=== Assets directory ===" && \
     ls -la /usr/share/nginx/html/assets/ 2>&1 | head -10 || echo "Assets directory not found" && \
+    echo "=== Assets/images ===" && \
+    ls -la /usr/share/nginx/html/assets/images/ 2>&1 | head -5 || echo "Assets/images not found" && \
+    echo "=== Collections/work ===" && \
+    ls -la /usr/share/nginx/html/collections/work/ 2>&1 | head -5 || echo "Collections/work not found" && \
     echo "=== Fonts directory ===" && \
     ls -la /usr/share/nginx/html/fonts/ 2>&1 | head -5 || echo "Fonts directory not found"
 
