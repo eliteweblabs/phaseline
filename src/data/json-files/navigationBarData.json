@@ -8,7 +8,6 @@
 		{ "name": "Work", "link": "/work" },
 		{ "name": "Services", "link": "/services" },
 		{ "name": "Culture", "link": "/about-v1" },
-		{ "name": "Journal", "link": "/blog" },
 		{
 			"name": "Pages",
 			"link": "#",
