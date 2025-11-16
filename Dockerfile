@@ -21,6 +21,11 @@ FROM nginx:alpine
 # Note: COPY copies the directory contents when the destination ends with /
 COPY --from=builder /app/dist/. /usr/share/nginx/html/
 
+# Verify files were copied correctly
+RUN ls -la /usr/share/nginx/html/ | head -20 && \
+    ls -la /usr/share/nginx/html/logo*.webp 2>&1 || echo "Logo files not found" && \
+    ls -la /usr/share/nginx/html/assets/ 2>&1 | head -5 || echo "Assets directory not found"
+
 # Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
