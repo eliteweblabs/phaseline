@@ -14,36 +14,30 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Production stage with nginx
-FROM nginx:alpine
+# Production stage - use Node.js to serve static files (simpler than nginx)
+FROM node:20-alpine
 
-# Copy contents of dist directory
-COPY --from=builder /app/dist/. /usr/share/nginx/html/
+WORKDIR /app
+
+# Copy built files from builder stage
+COPY --from=builder /app/dist ./dist
+
+# Install serve package for static file serving
+RUN npm install -g serve@14.2.3
 
 # Verify files were copied correctly
-RUN echo "=== Contents of /usr/share/nginx/html ===" && \
-    ls -la /usr/share/nginx/html/ | head -30 && \
+RUN echo "=== Contents of dist ===" && \
+    ls -la dist/ | head -30 && \
     echo "=== Logo files ===" && \
-    ls -la /usr/share/nginx/html/logo*.webp 2>&1 || echo "Logo files not found" && \
+    ls -la dist/logo*.webp 2>&1 || echo "Logo files not found" && \
     echo "=== Assets directory ===" && \
-    ls -la /usr/share/nginx/html/assets/ 2>&1 | head -10 || echo "Assets directory not found" && \
-    echo "=== Assets/images ===" && \
-    ls -la /usr/share/nginx/html/assets/images/ 2>&1 | head -5 || echo "Assets/images not found" && \
-    echo "=== Collections/work ===" && \
-    ls -la /usr/share/nginx/html/collections/work/ 2>&1 | head -5 || echo "Collections/work not found" && \
+    ls -la dist/assets/ 2>&1 | head -10 || echo "Assets directory not found" && \
     echo "=== Fonts directory ===" && \
-    ls -la /usr/share/nginx/html/fonts/ 2>&1 | head -5 || echo "Fonts directory not found"
-
-# Copy nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-
-# Copy startup script
-COPY start-nginx.sh /start-nginx.sh
-RUN chmod +x /start-nginx.sh
+    ls -la dist/fonts/ 2>&1 | head -5 || echo "Fonts directory not found"
 
 # Expose port
 EXPOSE 8080
 
-# Start nginx with dynamic port
-CMD ["/start-nginx.sh"]
+# Start serve with Railway's PORT
+CMD ["sh", "-c", "serve dist -l 0.0.0.0:${PORT:-8080}"]
 
