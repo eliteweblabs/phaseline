@@ -150,7 +150,7 @@ const wrapperProps = orientation === 'horizontal' ? { class: 'card__content' } :
 		@apply text-sm font-light text-neutral-500 dark:text-neutral-200;
 	}
 	.card__body {
-		@apply p-7.5;
+		@apply overflow-hidden p-7.5 break-words;
 	}
 	.card__header + .card__body {
 		@apply pt-0;

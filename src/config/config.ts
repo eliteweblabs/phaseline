@@ -24,12 +24,12 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Solid Boston - ',
+	siteTitle: 'Solid Boston - We build like we mean it.',
 	siteDescription:
 		'Your site description goes here. Update this with information about your business or organization.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/logo-light.webp',
+		src: '/solid-builders-logo.svg',
 		srcDark: '/logo-dark.webp',
 		alt: 'Site logo'
 	},

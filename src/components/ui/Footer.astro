@@ -29,7 +29,9 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 				<Col span="6">
 					<p class="footer__about">
 						{footerAbout.aboutText}
-						<a href={`mailto:${footerAbout.aboutLink}`}>{footerAbout.aboutLink}</a>
+						<a class="block truncate" href={`mailto:${footerAbout.aboutLink}`}
+							>{footerAbout.aboutLink}</a
+						>
 					</p>
 				</Col>
 				<Col span="3" classes="hidden lg:block" />
@@ -84,7 +86,7 @@ const { footerAbout, footerColumns, subFooter } = footerNavigationData
 		@apply relative z-1 mx-auto px-6 in-[.section--fullwidth]:max-w-full [.section--fullwidth_&]:md:px-0;
 	}
 	.footer__about {
-		@apply font-headings text-4xl font-medium text-neutral-50 in-[.dark]:text-neutral-950 md:text-6xl lg:text-8xl dark:text-neutral-950 [.light_&]:text-neutral-50;
+		@apply font-headings text-4xl font-medium text-neutral-50 in-[.dark]:text-neutral-950 md:text-6xl lg:text-6xl dark:text-neutral-950 [.light_&]:text-neutral-50;
 	}
 	.footer__about a {
 		@apply underline decoration-neutral-500 decoration-wavy decoration-[0.1rem] underline-offset-8 transition-all hover:underline-offset-12 dark:decoration-neutral-400;

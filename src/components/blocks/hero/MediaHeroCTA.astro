@@ -27,7 +27,7 @@ const { title = '', text = '' } = Astro.props
 <Section classes="lg:py-40!">
 	<Row>
 		<Col span="6">
-			<h1>{title}</h1>
+			<h1 class="font-bold!">{title}</h1>
 
 			<p class="text-lead max-w-[600px]">{text}</p>
 		</Col>
@@ -229,6 +229,14 @@ const { title = '', text = '' } = Astro.props
 								<img
 									src="/assets/images/pexels-christa-grover-977018-1909791.jpg"
 									alt="Project 10"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/destroy-build.jpg"
+									alt="Project 6"
 									class="h-full w-full object-cover"
 								/>
 							</SwiperSlide>
