@@ -39,5 +39,6 @@ RUN echo "=== Contents of dist ===" && \
 EXPOSE 8080
 
 # Start serve with Railway's PORT
-CMD ["sh", "-c", "serve dist -l 0.0.0.0:${PORT:-8080}"]
+# serve binds to 0.0.0.0 by default when using -l flag
+CMD ["sh", "-c", "PORT=${PORT:-8080} serve dist -l $PORT"]
 
