@@ -118,9 +118,26 @@ const server = createServer((req, res) => {
 })
 
 server.listen(PORT, HOST, () => {
-  console.log(`Server running at http://${HOST}:${PORT}`)
-  console.log(`Serving files from: ${DIST_DIR}`)
-  console.log(`PORT environment variable: ${process.env.PORT}`)
+  console.log(`✅ Server running at http://${HOST}:${PORT}`)
+  console.log(`📁 Serving files from: ${DIST_DIR}`)
+  console.log(`🔌 PORT environment variable: ${process.env.PORT || 'not set, using default 4321'}`)
+  console.log(`🌐 Server is ready to accept connections`)
+  
+  // Verify dist directory exists
+  try {
+    const stats = statSync(DIST_DIR)
+    if (stats.isDirectory()) {
+      console.log(`✅ Dist directory exists: ${DIST_DIR}`)
+      const indexPath = resolve(DIST_DIR, 'index.html')
+      if (statSync(indexPath).isFile()) {
+        console.log(`✅ index.html found`)
+      } else {
+        console.error(`❌ index.html NOT found at ${indexPath}`)
+      }
+    }
+  } catch (err) {
+    console.error(`❌ Dist directory error:`, err.message)
+  }
 })
 
 // Handle errors
