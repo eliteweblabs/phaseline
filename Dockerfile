@@ -29,16 +29,27 @@ RUN npm install -g serve@14.2.3
 RUN echo "=== Contents of dist ===" && \
     ls -la dist/ | head -30 && \
     echo "=== Logo files ===" && \
-    ls -la dist/logo*.webp 2>&1 || echo "Logo files not found" && \
+    (ls -la dist/logo*.webp 2>&1 || echo "Logo files not found") && \
+    echo "=== Testing logo file access ===" && \
+    (test -f dist/logo-light.webp && echo "✅ logo-light.webp EXISTS" || echo "❌ logo-light.webp MISSING") && \
     echo "=== Assets directory ===" && \
-    ls -la dist/assets/ 2>&1 | head -10 || echo "Assets directory not found" && \
+    (ls -la dist/assets/ 2>&1 | head -10 || echo "Assets directory not found") && \
+    echo "=== Assets/images ===" && \
+    (ls -la dist/assets/images/ 2>&1 | head -5 || echo "Assets/images not found") && \
+    echo "=== Collections/work ===" && \
+    (ls -la dist/collections/work/ 2>&1 | head -5 || echo "Collections/work not found") && \
     echo "=== Fonts directory ===" && \
-    ls -la dist/fonts/ 2>&1 | head -5 || echo "Fonts directory not found"
+    (ls -la dist/fonts/ 2>&1 | head -5 || echo "Fonts directory not found") && \
+    echo "=== Bgs directory ===" && \
+    (ls -la dist/bgs/ 2>&1 | head -5 || echo "Bgs directory not found") && \
+    echo "=== Total files in dist ===" && \
+    find dist -type f | wc -l
 
 # Expose port
 EXPOSE 8080
 
 # Start serve with Railway's PORT
+# -s flag enables single-page app mode (serves index.html for all routes)
 # serve binds to 0.0.0.0 by default when using -l flag
-CMD ["sh", "-c", "PORT=${PORT:-8080} serve dist -l $PORT"]
+CMD ["sh", "-c", "PORT=${PORT:-8080} serve -s dist -l $PORT"]
 
