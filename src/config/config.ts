@@ -22,7 +22,7 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Solid Boston - Your Site Title',
+	siteTitle: 'Solid Boston - ',
 	siteDescription:
 		'Your site description goes here. Update this with information about your business or organization.',
 	ogImage: '/og.jpg',

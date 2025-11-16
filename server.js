@@ -38,6 +38,7 @@ function serveFile(filePath, res) {
   try {
     const stats = statSync(filePath)
     if (!stats.isFile()) {
+      console.log(`Not a file: ${filePath}`)
       return false
     }
 
@@ -46,11 +47,13 @@ function serveFile(filePath, res) {
     
     res.writeHead(200, {
       'Content-Type': mimeType,
-      'Content-Length': content.length
+      'Content-Length': content.length,
+      'Cache-Control': 'public, max-age=3600'
     })
     res.end(content)
     return true
   } catch (err) {
+    console.log(`Error serving file ${filePath}:`, err.message)
     return false
   }
 }
@@ -72,27 +75,66 @@ function getFilePath(urlPath) {
 }
 
 const server = createServer((req, res) => {
-  const filePath = getFilePath(req.url)
-  
-  if (serveFile(filePath, res)) {
-    return
-  }
-  
-  // Try index.html for 404s (SPA routing)
-  if (req.url !== '/index.html') {
-    const indexPath = resolve(DIST_DIR, 'index.html')
-    if (serveFile(indexPath, res)) {
+  try {
+    // Log request for debugging
+    console.log(`${req.method} ${req.url}`)
+    
+    // Health check endpoint
+    if (req.url === '/health' || req.url === '/healthz') {
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ status: 'ok', timestamp: new Date().toISOString() }))
       return
     }
+    
+    const filePath = getFilePath(req.url)
+    console.log(`Attempting to serve: ${filePath}`)
+    
+    if (serveFile(filePath, res)) {
+      console.log(`Served: ${req.url}`)
+      return
+    }
+    
+    // Try index.html for 404s (SPA routing)
+    if (req.url !== '/index.html' && !req.url.includes('.')) {
+      const indexPath = resolve(DIST_DIR, 'index.html')
+      console.log(`Trying index.html for: ${req.url}`)
+      if (serveFile(indexPath, res)) {
+        return
+      }
+    }
+    
+    // 404
+    console.log(`404: ${req.url} -> ${filePath}`)
+    res.writeHead(404, { 'Content-Type': 'text/plain' })
+    res.end('404 Not Found')
+  } catch (error) {
+    console.error('Server error:', error)
+    console.error(error.stack)
+    if (!res.headersSent) {
+      res.writeHead(500, { 'Content-Type': 'text/plain' })
+      res.end('500 Internal Server Error')
+    }
   }
-  
-  // 404
-  res.writeHead(404, { 'Content-Type': 'text/plain' })
-  res.end('404 Not Found')
 })
 
 server.listen(PORT, HOST, () => {
   console.log(`Server running at http://${HOST}:${PORT}`)
   console.log(`Serving files from: ${DIST_DIR}`)
+  console.log(`PORT environment variable: ${process.env.PORT}`)
+})
+
+// Handle errors
+server.on('error', (error) => {
+  console.error('Server error:', error)
+  process.exit(1)
+})
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  console.log('SIGTERM received, shutting down gracefully')
+  server.close(() => {
+    console.log('Server closed')
+    process.exit(0)
+  })
 })
 
