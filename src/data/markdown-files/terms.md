@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Welcome to Toki! By using our services, you agree to be bound by these terms and conditions. Please read them carefully.
+Welcome to Solid Builders! By using our services, you agree to be bound by these terms and conditions. Please read them carefully.
 
 ## Acceptance of Terms
 
-By accessing or using Toki, you agree to comply with and be bound by these Terms of Service and our Privacy Policy. If you do not agree with these terms, you should not use our services.
+By accessing or using Solid Builders, you agree to comply with and be bound by these Terms of Service and our Privacy Policy. If you do not agree with these terms, you should not use our services.
 
 ## Changes to Terms
 
@@ -16,7 +16,7 @@ We reserve the right to modify these terms at any time. We will notify you of an
 
 ### Registration
 
-To use certain features of Toki, you may need to create an account. You agree to provide accurate and complete information when creating your account and to keep this information up-to-date.
+To use certain features of Solid Builders, you may need to create an account. You agree to provide accurate and complete information when creating your account and to keep this information up-to-date.
 
 ### Account Security
 
@@ -30,7 +30,7 @@ We grant you a limited, non-exclusive, non-transferable, and revocable license t
 
 ### Prohibited Activities
 
-You agree not to use Toki for any unlawful or prohibited activities, including but not limited to:
+You agree not to use Solid Builders for any unlawful or prohibited activities, including but not limited to:
 
 - Violating any applicable laws or regulations
 - Infringing on the intellectual property rights of others
@@ -41,17 +41,17 @@ You agree not to use Toki for any unlawful or prohibited activities, including b
 
 ### Your Content
 
-You retain ownership of any content you upload to Toki. By uploading content, you grant us a worldwide, royalty-free, and non-exclusive license to use, reproduce, and display your content for the purpose of operating and improving the service.
+You retain ownership of any content you upload to Solid Builders. By uploading content, you grant us a worldwide, royalty-free, and non-exclusive license to use, reproduce, and display your content for the purpose of operating and improving the service.
 
 ### Our Content
 
-All content provided by Toki, including text, graphics, logos, and software, is the property of Toki or its licensors and is protected by intellectual property laws. You may not use, reproduce, or distribute any of our content without our prior written permission.
+All content provided by Solid Builders, including text, graphics, logos, and software, is the property of Solid Builders or its licensors and is protected by intellectual property laws. You may not use, reproduce, or distribute any of our content without our prior written permission.
 
 ## Payment and Billing
 
 ### Subscription Fees
 
-Certain features of Toki may require a subscription. You agree to pay all applicable fees as described on our pricing page. Fees are non-refundable except as required by law.
+Certain features of Solid Builders may require a subscription. You agree to pay all applicable fees as described on our pricing page. Fees are non-refundable except as required by law.
 
 ### Billing Information
 
@@ -59,32 +59,32 @@ You must provide accurate and up-to-date billing information. You authorize us t
 
 ## Termination
 
-We may terminate or suspend your account and access to Toki at any time, without prior notice, for conduct that we believe violates these terms or is harmful to other users of the service.
+We may terminate or suspend your account and access to Solid Builders at any time, without prior notice, for conduct that we believe violates these terms or is harmful to other users of the service.
 
 ## Disclaimer of Warranties
 
-Toki is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the service will be uninterrupted or error-free.
+Solid Builders is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the service will be uninterrupted or error-free.
 
 ## Limitation of Liability
 
-To the maximum extent permitted by law, Toki shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of the service.
+To the maximum extent permitted by law, Solid Builders shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of the service.
 
 ## Governing Law
 
-These terms are governed by and construed in accordance with the laws of the jurisdiction in which Toki operates, without regard to its conflict of law principles.
+These terms are governed by and construed in accordance with the laws of the jurisdiction in which Solid Builders operates, without regard to its conflict of law principles.
 
 ## Contact Information
 
 If you have any questions about these Terms of Service, please contact us at:
 
 Email: support@oxygenna.com
-Address: 123 Toki Lane, Productivity City, PC 12345
+Address: 123 Solid Builders Lane, Productivity City, PC 12345
 
 ## Miscellaneous
 
 ### Entire Agreement
 
-These terms constitute the entire agreement between you and Toki regarding the use of the service and supersede any prior agreements.
+These terms constitute the entire agreement between you and Solid Builders regarding the use of the service and supersede any prior agreements.
 
 ### Severability
 

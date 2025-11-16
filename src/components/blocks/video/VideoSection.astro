@@ -22,8 +22,10 @@ type Props = {
 	video?: string
 	classes?: string
 }
-const { video = 'https://oxygenna-themes.b-cdn.net/toki-astro/videos/home-video.mp4', classes } =
-	Astro.props
+const {
+	video = 'https://oxygenna-themes.b-cdn.net/Solid Builders-astro/videos/home-video.mp4',
+	classes
+} = Astro.props
 ---
 
 <Section classes={`${classes ? classes : ''}`}>

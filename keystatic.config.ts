@@ -9,7 +9,7 @@ export default config({
   //   project: "your-username/your-repo-name",
   // },
   ui: {
-    brand: { name: 'Toki Astro Themes' },
+    brand: { name: 'Solid Builders Astro Themes' },
   },
   collections: {
     blog: collection({
