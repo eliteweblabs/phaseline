@@ -13,6 +13,7 @@ import Row from '../../ui/Row.astro'
 import Col from '../../ui/Col.astro'
 // - UI
 import Card from '../../ui/cards/Card.astro'
+import { Swiper, SwiperSlide, SwiperWrapper } from 'astro-swiper'
 
 // Content
 // - Props
@@ -35,33 +36,205 @@ const { title = '', text = '' } = Astro.props
 			<div
 				class="grid max-h-[620px] grid-cols-3 grid-rows-3 gap-3 lg:grid-cols-4 lg:grid-rows-4 lg:gap-7.5"
 			>
-				<Card
-					image="/assets/images/pexels-marianne-67058-238377.jpg"
-					classes="col-span-1 row-span-1 col-start-1 row-start-1 lg:row-start-4 h-full"
-					cardMediaClasses="h-full w-full object-cover "
-				/>
-				<Card
-					image="/assets/images/pexels-christa-grover-977018-1909791.jpg"
-					classes="col-span-1 row-span-2 lg:col-start-2 col-start-1 lg:row-start-3 row-start-2 h-full"
-					cardMediaClasses="h-full w-full object-cover"
-				/>
-				<Card
-					image="/assets/images/setting.png"
-					classes="col-span-1 row-span-1 lg:col-start-4 lg:row-start-1 h-full hidden! lg:block!"
-					cardMediaClasses="h-full w-full object-cover"
-				/>
-				<Card
-					image="/assets/images/pexels-heyho-11701123.jpg"
-					classes="col-span-2 row-span-2 lg:col-start-3 col-start-2 lg:row-start-2 row-start-1 h-full"
-					cardMediaClasses="h-full w-full object-cover"
-				/>
-				<!-- video="/assets/videos/video-02.mp4" -->
+				<!-- Slider 1: Bottom-left card -->
+				<div
+					class="col-span-1 col-start-1 row-span-1 row-start-1 h-full overflow-hidden rounded-xl bg-white lg:row-start-4 dark:bg-neutral-900"
+				>
+					<Swiper
+						options={{
+							slidesPerView: 1,
+							loop: true,
+							autoplay: {
+								delay: 3000,
+								disableOnInteraction: false
+							},
+							speed: 1000,
+							effect: 'creative',
+							creativeEffect: {
+								prev: { translate: ['-100%', 0, 0] },
+								next: { translate: ['100%', 0, 0] }
+							}
+						}}
+						class="multi-direction-slider h-full w-full"
+					>
+						<SwiperWrapper>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-marianne-67058-238377.jpg"
+									alt="Project 1"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-itsterrymag-2988865.jpg"
+									alt="Project 2"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+						</SwiperWrapper>
+					</Swiper>
+				</div>
 
-				<Card
-					image="/assets/images/pexels-itsterrymag-2988865.jpg"
-					classes="col-span-2 row-span-1 lg:col-start-3 lg:row-start-4 col-start-2 row-start-3 h-full"
-					cardMediaClasses="h-full w-full object-cover "
-				/>
+				<!-- Slider 2: Left tall card -->
+				<div
+					class="col-span-1 col-start-1 row-span-2 row-start-2 h-full overflow-hidden rounded-xl bg-white lg:col-start-2 lg:row-start-3 dark:bg-neutral-900"
+				>
+					<Swiper
+						options={{
+							slidesPerView: 1,
+							loop: true,
+							autoplay: {
+								delay: 3500,
+								disableOnInteraction: false
+							},
+							speed: 1000,
+							effect: 'creative',
+							creativeEffect: {
+								prev: { translate: [0, '-100%', 0] },
+								next: { translate: [0, '100%', 0] }
+							}
+						}}
+						class="multi-direction-slider h-full w-full"
+					>
+						<SwiperWrapper>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-christa-grover-977018-1909791.jpg"
+									alt="Project 3"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/setting.png"
+									alt="Project 4"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+						</SwiperWrapper>
+					</Swiper>
+				</div>
+
+				<!-- Slider 3: Top-right small card (hidden on mobile) -->
+				<div
+					class="col-span-1 row-span-1 hidden! h-full overflow-hidden rounded-xl bg-white lg:col-start-4 lg:row-start-1 lg:block! dark:bg-neutral-900"
+				>
+					<Swiper
+						options={{
+							slidesPerView: 1,
+							loop: true,
+							autoplay: {
+								delay: 4000,
+								disableOnInteraction: false
+							},
+							speed: 1000,
+							effect: 'creative',
+							creativeEffect: {
+								prev: { translate: ['100%', 0, 0] },
+								next: { translate: ['-100%', 0, 0] }
+							}
+						}}
+						class="multi-direction-slider h-full w-full"
+					>
+						<SwiperWrapper>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/setting.png"
+									alt="Project 5"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-heyho-11701123.jpg"
+									alt="Project 6"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+						</SwiperWrapper>
+					</Swiper>
+				</div>
+
+				<!-- Slider 4: Center large card -->
+				<div
+					class="col-span-2 col-start-2 row-span-2 row-start-1 h-full overflow-hidden rounded-xl bg-white lg:col-start-3 lg:row-start-2 dark:bg-neutral-900"
+				>
+					<Swiper
+						options={{
+							slidesPerView: 1,
+							loop: true,
+							autoplay: {
+								delay: 4500,
+								disableOnInteraction: false
+							},
+							speed: 1000,
+							effect: 'creative',
+							creativeEffect: {
+								prev: { translate: [0, '100%', 0] },
+								next: { translate: [0, '-100%', 0] }
+							}
+						}}
+						class="multi-direction-slider h-full w-full"
+					>
+						<SwiperWrapper>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-heyho-11701123.jpg"
+									alt="Project 7"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-marianne-67058-238377.jpg"
+									alt="Project 8"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+						</SwiperWrapper>
+					</Swiper>
+				</div>
+
+				<!-- Slider 5: Bottom-right wide card -->
+				<div
+					class="col-span-2 col-start-2 row-span-1 row-start-3 h-full overflow-hidden rounded-xl bg-white lg:col-start-3 lg:row-start-4 dark:bg-neutral-900"
+				>
+					<Swiper
+						options={{
+							slidesPerView: 1,
+							loop: true,
+							autoplay: {
+								delay: 5000,
+								disableOnInteraction: false
+							},
+							speed: 1000,
+							effect: 'creative',
+							creativeEffect: {
+								prev: { translate: ['-100%', 0, 0] },
+								next: { translate: ['100%', 0, 0] }
+							}
+						}}
+						class="multi-direction-slider h-full w-full"
+					>
+						<SwiperWrapper>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-itsterrymag-2988865.jpg"
+									alt="Project 9"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+							<SwiperSlide class="h-full w-full">
+								<img
+									src="/assets/images/pexels-christa-grover-977018-1909791.jpg"
+									alt="Project 10"
+									class="h-full w-full object-cover"
+								/>
+							</SwiperSlide>
+						</SwiperWrapper>
+					</Swiper>
+				</div>
 			</div>
 		</Col>
 	</Row>
