@@ -18,13 +18,18 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy built files to nginx
-# Note: COPY copies the directory contents when the destination ends with /
+# Copy contents of dist directory (the . means contents, not the directory itself)
 COPY --from=builder /app/dist/. /usr/share/nginx/html/
 
 # Verify files were copied correctly
-RUN ls -la /usr/share/nginx/html/ | head -20 && \
+RUN echo "=== Contents of /usr/share/nginx/html ===" && \
+    ls -la /usr/share/nginx/html/ | head -30 && \
+    echo "=== Logo files ===" && \
     ls -la /usr/share/nginx/html/logo*.webp 2>&1 || echo "Logo files not found" && \
-    ls -la /usr/share/nginx/html/assets/ 2>&1 | head -5 || echo "Assets directory not found"
+    echo "=== Assets directory ===" && \
+    ls -la /usr/share/nginx/html/assets/ 2>&1 | head -10 || echo "Assets directory not found" && \
+    echo "=== Fonts directory ===" && \
+    ls -la /usr/share/nginx/html/fonts/ 2>&1 | head -5 || echo "Fonts directory not found"
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
