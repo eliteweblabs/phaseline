@@ -18,7 +18,8 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy built files to nginx
-COPY --from=builder /app/dist /usr/share/nginx/html
+# Note: COPY copies the directory contents when the destination ends with /
+COPY --from=builder /app/dist/. /usr/share/nginx/html/
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
