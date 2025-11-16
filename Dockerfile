@@ -11,8 +11,18 @@ RUN npm ci
 # Copy source files
 COPY . .
 
+# Verify public folder exists before build
+RUN echo "=== Checking public folder before build ===" && \
+    ls -la public/ | head -10
+
 # Build the application
 RUN npm run build
+
+# Verify dist after build
+RUN echo "=== Checking dist after build ===" && \
+    ls -la dist/ | head -20 && \
+    echo "=== Checking for logo files in dist ===" && \
+    ls -la dist/logo*.webp 2>&1 || echo "Logo files not in dist"
 
 # Production stage - use Node.js to serve static files (simpler than nginx)
 FROM node:20-alpine
