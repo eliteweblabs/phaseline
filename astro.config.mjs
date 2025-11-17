@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
 import markdoc from '@astrojs/markdoc'
 import keystatic from '@keystatic/astro'
-// Removed Netlify adapter - not needed for static site on Railway
+import node from '@astrojs/node'
 
 // https://astro.build/config
 // Get site URL from environment, with fallback
@@ -35,7 +35,10 @@ const getSiteUrl = () => {
 }
 
 export default defineConfig({
-  output: 'static', // Static site - no adapter needed
+  output: 'hybrid', // Hybrid: static pages + SSR for Keystatic
+  adapter: node({
+    mode: 'standalone'
+  }),
   site: getSiteUrl(),
   integrations: [
     icon(),

@@ -24,24 +24,21 @@ RUN echo "=== Checking dist after build ===" && \
     echo "=== Checking for logo files in dist ===" && \
     ls -la dist/logo*.webp 2>&1 || echo "Logo files not in dist"
 
-# Production stage - use Node.js to serve static files (simpler than nginx)
+# Production stage - run Astro's built-in Node.js server
 FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy built files from builder stage
+# Copy built files from builder stage (includes server and static files)
 COPY --from=builder /app/dist ./dist
 
-# Install serve package for static file serving
-RUN npm install -g serve@14.2.3
-
-# Copy startup script
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# Set environment variables
+ENV HOST=0.0.0.0
+ENV PORT=8080
 
 # Expose port
 EXPOSE 8080
 
-# Start serve with runtime verification
-CMD ["/start.sh"]
+# Start Astro server
+CMD ["node", "./dist/server/entry.mjs"]
 
