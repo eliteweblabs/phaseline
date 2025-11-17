@@ -1,6 +1,6 @@
 import { createServer } from 'http'
 import { readFileSync, statSync } from 'fs'
-import { join, extname, resolve } from 'path'
+import { extname, resolve } from 'path'
 import { fileURLToPath } from 'url'
 
 const __filename = fileURLToPath(import.meta.url)
