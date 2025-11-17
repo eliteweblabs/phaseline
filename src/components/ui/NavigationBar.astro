@@ -48,8 +48,8 @@ const savedNavActions = navActions.map((action: any) => ({
 		<nav aria-label="main navigation" role="navigation" class="header__nav">
 			{/* Logo */}
 			<a href={`/`} class="header__logo">
-				<img src={logo.src} alt={logo.alt} width="100" height="100" class="block dark:hidden" />
-				<img src={logo.srcDark} alt={logo.alt} width="100" height="100" class="hidden dark:block" />
+				<img src={logo.src} alt={logo.alt} class="block dark:hidden" />
+				<img src={logo.srcDark} alt={logo.alt} class="hidden dark:block" />
 				{logo.text && <span>{logo.text}</span>}
 				<Decorations type="bottom-right" size="sm" />
 			</a>
@@ -182,6 +182,9 @@ const savedNavActions = navActions.map((action: any) => ({
 	}
 	.header__logo {
 		@apply relative flex items-center border-r border-neutral-100 bg-[#ffffff] bg-[url('/bgs/light.webp')] bg-size-[200px] text-2xl font-black tracking-wider whitespace-nowrap focus:outline-hidden dark:border-neutral-800 dark:bg-neutral-900 dark:bg-[url('/bgs/dark.webp')];
+	}
+	.header__logo img {
+		height: 100%;
 	}
 	.header__nav {
 		@apply flex h-22 items-stretch justify-between font-medium lg:h-[6.25rem];
