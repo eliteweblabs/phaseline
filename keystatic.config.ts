@@ -1,15 +1,13 @@
 import { config, fields, collection } from '@keystatic/core'
 
 export default config({
-  // Using local storage for now - change to cloud when ready to use GitHub integration
-  storage: { kind: 'local' },
-  // Uncomment and configure when ready to use cloud storage:
-  // storage: import.meta.env.DEV ? { kind: "local" } : { kind: "cloud" },
-  // cloud: {
-  //   project: "your-username/your-repo-name",
-  // },
+  // GitHub mode: Client edits commit directly to GitHub repo
+  storage: import.meta.env.DEV
+    ? { kind: 'local' } // Local development
+    : { kind: 'github', repo: '4rgd/solid' }, // Production - GitHub repo
+  
   ui: {
-    brand: { name: 'Solid Builders Astro Themes' },
+    brand: { name: 'Solid Builders' },
   },
   collections: {
     blog: collection({
