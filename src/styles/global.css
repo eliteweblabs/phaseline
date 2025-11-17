@@ -140,7 +140,7 @@ html {
 	@apply scroll-smooth antialiased;
 }
 body {
-	@apply font-body bg-neutral-50 bg-[url('/bgs/light.webp')] bg-size-[200px] text-base leading-7 text-neutral-500 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-400 in-[.light]:text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/dark.webp')] dark:text-neutral-400 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
+	@apply font-body font-medium bg-neutral-50 bg-[url('/bgs/light.webp')] bg-size-[200px] text-base leading-7 text-neutral-500 selection:bg-neutral-950 selection:text-neutral-50 in-[.dark]:text-neutral-400 in-[.light]:text-neutral-500 has-[.header\_\_menu--open]:overflow-hidden lg:has-[.header\_\_menu--open]:overflow-auto dark:bg-neutral-950 dark:bg-[url('/bgs/dark.webp')] dark:text-neutral-400 dark:selection:bg-neutral-50 dark:selection:text-neutral-950;
 }
 
 /* Main typography */
@@ -178,7 +178,7 @@ h2,
 .h2,
 h3,
 .h3 {
-	@apply mb-6 font-medium;
+	@apply mb-6 font-semibold;
 }
 
 h4,
@@ -187,7 +187,7 @@ h5,
 .h5,
 h6,
 .h6 {
-	@apply mb-4 font-medium;
+	@apply mb-4 font-semibold;
 }
 
 h1,
