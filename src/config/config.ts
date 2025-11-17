@@ -26,11 +26,11 @@ export interface Config {
 export const configData: Config = {
 	siteTitle: 'Solid Boston - We build like we mean it.',
 	siteDescription:
-		'Your site description goes here. Update this with information about your business or organization.',
+		'Boston based construction company specializing in residential and commercial construction.',
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/solid-builders-logo.svg',
-		srcDark: '/logo-dark.webp',
+		srcDark: '/solid-builders-logo-dark.svg',
 		alt: 'Site logo'
 	},
 	canonical: true,
