@@ -1,7 +1,7 @@
 {
 	"logo": {
 		"src": "/solid-builders-logo.svg",
-		"srcDark": "/solid-builders-logo.svg",
+		"srcDark": "/solid-builders-logo-dark.svg",
 		"alt": "The tailwind astro theme"
 	},
 	"navItems": [
