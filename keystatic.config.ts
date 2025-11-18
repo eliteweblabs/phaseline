@@ -4,7 +4,10 @@ export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
   storage: {
     kind: 'github',
-    repo: 'eliteweblabs/solid',
+    repo: {
+      owner: 'eliteweblabs',
+      name: 'solid',
+    },
   },
 
   ui: {
