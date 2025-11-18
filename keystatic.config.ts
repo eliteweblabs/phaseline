@@ -2,11 +2,10 @@ import { config, fields, collection } from '@keystatic/core'
 
 export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
-  // Use GitHub storage in production (when NODE_ENV is production or on Railway)
-  storage:
-    process.env.NODE_ENV === 'production' || process.env.RAILWAY_ENVIRONMENT
-      ? { kind: 'github', repo: 'eliteweblabs/solid' }
-      : { kind: 'local' },
+  storage: { 
+    kind: 'github', 
+    repo: 'eliteweblabs/solid'
+  },
 
   ui: {
     brand: { name: 'Solid Builders' },
