@@ -35,7 +35,7 @@ const getSiteUrl = () => {
 }
 
 export default defineConfig({
-  output: 'hybrid', // Hybrid: static pages + SSR for Keystatic
+  output: 'server', // Server mode for Keystatic (pages will be prerendered)
   adapter: node({
     mode: 'standalone'
   }),
