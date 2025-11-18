@@ -6,7 +6,7 @@ export default config({
   storage:
     process.env.NODE_ENV === 'production' || process.env.RAILWAY_ENVIRONMENT
       ? { kind: 'github', repo: 'eliteweblabs/solid' }
-      : { kind: 'local' }
+      : { kind: 'local' },
 
   ui: {
     brand: { name: 'Solid Builders' },
