@@ -5,7 +5,7 @@ export default config({
   storage: import.meta.env.DEV
     ? { kind: 'local' } // Local development
     : { kind: 'github', repo: 'eliteweblabs/solid' }, // Production - GitHub repo
-  
+
   ui: {
     brand: { name: 'Solid Builders' },
   },
