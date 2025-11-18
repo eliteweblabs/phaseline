@@ -4,7 +4,7 @@ export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
   storage: import.meta.env.DEV
     ? { kind: 'local' } // Local development
-    : { kind: 'github', repo: '4rgd/solid' }, // Production - GitHub repo
+    : { kind: 'github', repo: 'eliteweblabs/solid' }, // Production - GitHub repo
   
   ui: {
     brand: { name: 'Solid Builders' },
