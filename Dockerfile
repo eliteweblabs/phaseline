@@ -29,6 +29,12 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# Copy package files for production dependencies
+COPY --from=builder /app/package*.json ./
+
+# Install only production dependencies (needed for SSR runtime)
+RUN npm ci --omit=dev
+
 # Copy built files from builder stage (includes server and static files)
 COPY --from=builder /app/dist ./dist
 
