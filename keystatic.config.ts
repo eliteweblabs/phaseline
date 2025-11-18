@@ -2,9 +2,9 @@ import { config, fields, collection } from '@keystatic/core'
 
 export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
-  storage: { 
-    kind: 'github', 
-    repo: 'eliteweblabs/solid'
+  storage: {
+    kind: 'github',
+    repo: 'eliteweblabs/solid',
   },
 
   ui: {
