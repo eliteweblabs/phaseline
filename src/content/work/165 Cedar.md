@@ -12,6 +12,7 @@ list:
   - Product campaign landing pages
   - Custom animated illustrations
 imageThumbnail: /collections/work/165-cedar-1.jpg
+image: /collections/work/165-cedar-1.jpg
 video: /collections/work/bloom-agency.mp4
 introduction:
   title: The Brief
