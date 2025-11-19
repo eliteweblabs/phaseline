@@ -11,7 +11,7 @@ list:
   - Style guide & brand system
   - Product campaign landing pages
   - Custom animated illustrations
-imageThumbnail: '#'
+imageThumbnail: /collections/work/165-cedar-1.jpg
 video: /collections/work/bloom-agency.mp4
 introduction:
   title: The Brief
