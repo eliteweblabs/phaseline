@@ -53,3 +53,4 @@ feedback:
     <p>Design that connects with your audience isn’t about flash—it’s about
     focus. When the brand reflects the user, momentum follows naturally.</p>
 ---
+![](solid-builders-logo.svg)
