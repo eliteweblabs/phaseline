@@ -5,10 +5,15 @@ if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = 'production'
 }
 
+// Determine if we're in development mode
+// Use explicit NODE_ENV check instead of import.meta.env.DEV which may not be reliable in SSR
+// Only use local storage if NODE_ENV is explicitly 'development' (defaults to production on Railway)
+const isDev = process.env.NODE_ENV === 'development'
+
 export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
   // Use local storage in development, GitHub storage in production
-  storage: import.meta.env.DEV
+  storage: isDev
     ? { kind: 'local' }
     : {
         kind: 'github',
