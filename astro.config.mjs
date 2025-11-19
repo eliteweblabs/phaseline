@@ -51,7 +51,9 @@ export default defineConfig({
     }),
     react(),
     markdoc(),
-    keystatic(), // Always enabled - uses GitHub mode in production
+    keystatic({
+      configPath: './keystatic.config.ts',
+    }),
   ],
   vite: {
     plugins: [tailwindcss()],
