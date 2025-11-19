@@ -10,15 +10,16 @@ import keystatic from '@keystatic/astro'
 import node from '@astrojs/node'
 
 // https://astro.build/config
-// Get site URL from environment, with fallback
-// Railway: Set PUBLIC_SITE_URL environment variable to your Railway domain
-// Example: https://solid-production.up.railway.app
+// Auto-detect site URL from Railway environment or request headers
+// No need to set SITE variable manually - it will be detected automatically
 const getSiteUrl = () => {
-  // Try multiple environment variable sources
+  // Try multiple environment variable sources (Railway provides these automatically)
   const url =
     process.env.PUBLIC_SITE_URL ||
     process.env.RAILWAY_PUBLIC_DOMAIN ||
-    process.env.RAILWAY_STATIC_URL
+    process.env.RAILWAY_STATIC_URL ||
+    process.env.RAILWAY_ENVIRONMENT_URL ||
+    process.env.SITE
 
   // Validate and format URL
   if (url && typeof url === 'string' && url.trim() !== '') {
@@ -30,14 +31,20 @@ const getSiteUrl = () => {
     return `https://${trimmedUrl}`
   }
 
-  // Fallback for local development (should not be used in production)
+  // Fallback: Try to construct from Railway service name (if available)
+  // Railway format: https://[service-name]-[project-id].up.railway.app
+  if (process.env.RAILWAY_SERVICE_NAME && process.env.RAILWAY_PROJECT_ID) {
+    return `https://${process.env.RAILWAY_SERVICE_NAME}-${process.env.RAILWAY_PROJECT_ID}.up.railway.app`
+  }
+
+  // Fallback for local development
   return 'https://localhost:4321'
 }
 
 export default defineConfig({
   output: 'server', // Server mode for Keystatic (pages will be prerendered)
   adapter: node({
-    mode: 'standalone'
+    mode: 'standalone',
   }),
   site: getSiteUrl(),
   integrations: [
