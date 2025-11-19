@@ -50,10 +50,16 @@ export default config({
           label: 'Description',
           validation: { isRequired: true },
         }),
-        image: fields.text({ label: 'Image URL' }),
+        image: fields.image({
+          label: 'Image',
+          directory: 'public/assets/images/blog',
+          publicPath: '/assets/images/blog/',
+        }),
         video: fields.text({ label: 'Video URL' }),
-        imageThumbnail: fields.text({
+        imageThumbnail: fields.image({
           label: 'Image Thumbnail',
+          directory: 'public/assets/images/blog/thumbnails',
+          publicPath: '/assets/images/blog/thumbnails/',
         }),
         videoThumbnail: fields.text({
           label: 'Video Thumbnail',
@@ -85,11 +91,17 @@ export default config({
         list: fields.array(fields.text({ label: 'List Item' }), {
           label: 'List',
         }),
-        imageThumbnail: fields.text({
+        imageThumbnail: fields.image({
           label: 'Image Thumbnail',
+          directory: 'public/assets/images/work/thumbnails',
+          publicPath: '/assets/images/work/thumbnails/',
           validation: { isRequired: true },
         }),
-        image: fields.text({ label: 'Image URL' }),
+        image: fields.image({
+          label: 'Image',
+          directory: 'public/assets/images/work',
+          publicPath: '/assets/images/work/',
+        }),
         video: fields.text({ label: 'Video URL' }),
         introduction: fields.object(
           {
@@ -119,9 +131,16 @@ export default config({
               label: 'Subtitle',
               validation: { isRequired: true },
             }),
-            images: fields.array(fields.text({ label: 'Image URL' }), {
-              label: 'Images',
-            }),
+            images: fields.array(
+              fields.image({
+                label: 'Image',
+                directory: 'public/assets/images/work/what-we-did',
+                publicPath: '/assets/images/work/what-we-did/',
+              }),
+              {
+                label: 'Images',
+              }
+            ),
             body: fields.text({
               label: 'Body',
               validation: { isRequired: true },
