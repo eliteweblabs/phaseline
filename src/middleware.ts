@@ -1,5 +1,10 @@
 import type { MiddlewareHandler } from 'astro'
 
+// Set NODE_ENV to production if not set (for Railway deployments)
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production'
+}
+
 export const onRequest: MiddlewareHandler = async (context, next) => {
   const { request, url } = context
   
@@ -14,7 +19,7 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     
     // Check environment variables
     console.log('Environment check:')
-    console.log('- NODE_ENV:', process.env.NODE_ENV)
+    console.log('- NODE_ENV:', process.env.NODE_ENV || 'undefined (will default to production)')
     console.log('- KEYSTATIC_SECRET:', process.env.KEYSTATIC_SECRET ? 'SET' : 'MISSING')
     console.log('- KEYSTATIC_GITHUB_CLIENT_ID:', process.env.KEYSTATIC_GITHUB_CLIENT_ID || 'MISSING')
     console.log('- KEYSTATIC_GITHUB_CLIENT_SECRET:', process.env.KEYSTATIC_GITHUB_CLIENT_SECRET ? 'SET' : 'MISSING')

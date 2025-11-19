@@ -1,5 +1,10 @@
 import { config, fields, collection } from '@keystatic/core'
 
+// Set NODE_ENV to production if not set (for Railway deployments)
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'production'
+}
+
 export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
   // Use local storage in development, GitHub storage in production
