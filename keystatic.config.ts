@@ -2,13 +2,16 @@ import { config, fields, collection } from '@keystatic/core'
 
 export default config({
   // GitHub mode: Client edits commit directly to GitHub repo
-  storage: {
-    kind: 'github',
-    repo: {
-      owner: 'eliteweblabs',
-      name: 'solid',
-    },
-  },
+  // Use local storage in development, GitHub storage in production
+  storage: import.meta.env.DEV
+    ? { kind: 'local' }
+    : {
+        kind: 'github',
+        repo: {
+          owner: 'eliteweblabs',
+          name: 'solid',
+        },
+      },
 
   ui: {
     brand: { name: 'Solid Builders' },
