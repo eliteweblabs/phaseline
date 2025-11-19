@@ -27,6 +27,17 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
       console.log('=== Keystatic API Response ===')
       console.log('Status:', response.status)
       console.log('Status Text:', response.statusText)
+      
+      // If 401, try to read the response body to see the error
+      if (response.status === 401) {
+        const clonedResponse = response.clone()
+        try {
+          const text = await clonedResponse.text()
+          console.log('401 Response Body:', text)
+        } catch (e) {
+          console.log('Could not read 401 response body')
+        }
+      }
     }
     
     return response
