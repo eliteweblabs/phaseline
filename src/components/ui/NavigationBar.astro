@@ -184,7 +184,9 @@ const savedNavActions = navActions.map((action: any) => ({
 		@apply relative flex items-center border-r border-neutral-100 bg-[#ffffff] bg-[url('/bgs/light.webp')] bg-size-[200px] text-2xl font-black tracking-wider whitespace-nowrap focus:outline-hidden dark:border-neutral-800 dark:bg-neutral-900 dark:bg-[url('/bgs/dark.webp')];
 	}
 	.header__logo img {
-		height: 100%;
+		max-width: 300px;
+		width: 100%;
+		padding: 20px;
 	}
 	.header__nav {
 		@apply flex h-22 items-stretch justify-between font-medium lg:h-[6.25rem];
