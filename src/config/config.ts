@@ -29,8 +29,8 @@ export const configData: Config = {
 		'Professional painting company specializing in residential and commercial painting services.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/phaseline-logo.svg',
-		srcDark: '/phaseline-logo-dark.svg',
+		src: '/phaseline-logo.png',
+		srcDark: '/phaseline-logo-dark.png',
 		alt: 'PhaseLine Painting logo'
 	},
 	canonical: true,
