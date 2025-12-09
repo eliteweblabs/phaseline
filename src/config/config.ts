@@ -30,7 +30,7 @@ export const configData: Config = {
 	ogImage: '/og.jpg',
 	logo: {
 		src: '/phaseline-logo.png',
-		srcDark: '/phaseline-log.png',
+		srcDark: '/phaseline-logo.png',
 		alt: 'PhaseLine Painting logo'
 	},
 	canonical: true,
