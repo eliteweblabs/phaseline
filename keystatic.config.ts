@@ -18,7 +18,7 @@ export default config({
     : {
         kind: 'github',
         repo: {
-          owner: '4rgd',
+          owner: 'eliteweblabs',
           name: 'phaseline',
         },
       },
