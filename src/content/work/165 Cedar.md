@@ -54,4 +54,4 @@ feedback:
     <p>Design that connects with your audience isn’t about flash—it’s about
     focus. When the brand reflects the user, momentum follows naturally.</p>
 ---
-![Solid Builders Logo](/collections/work/165 Cedar/body/solid-builders-logo.svg)
+![PhaseLine Painting Logo](/collections/work/165 Cedar/body/phaseline-logo.svg)

@@ -1,8 +1,8 @@
 {
 	"logo": {
-		"src": "/solid-builders-logo.svg",
-		"srcDark": "/solid-builders-logo-dark.svg",
-		"alt": "The Solid Builders logo"
+		"src": "/phaseline-logo.svg",
+		"srcDark": "/phaseline-logo-dark.svg",
+		"alt": "The PhaseLine Painting logo"
 	},
 	"navItems": [
 		{ "name": "Work", "link": "/work" },

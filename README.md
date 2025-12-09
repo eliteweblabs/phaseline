@@ -1,29 +1,27 @@
-# Solid Builders Astro Theme
+# PhaseLine Painting Astro Theme
 
-A standout agency template with striking design, blazing speed, built for modern agencies and creatives
+A professional painting company website template with striking design, blazing speed, built for modern painting contractors and service businesses
 
-![Solid Builders](https://oxygenna-themes.b-cdn.net/Solid Builders-astro/promo/Solid Builders.png)
-
-[![View live Demo](https://oxygenna-themes.b-cdn.net/Solid Builders-astro/promo/demo-button.svg)](https://Solid Builders-theme.netlify.app/) [![Page Speed Insights (100%)](https://oxygenna-themes.b-cdn.net/Solid Builders-astro/promo/button-pagespeed.svg)](https://pagespeed.web.dev/analysis/https-Solid Builders-theme-netlify-app/3qen1cfq0t?form_factor=desktop)
+![PhaseLine Painting](https://oxygenna-themes.b-cdn.net/Solid Builders-astro/promo/Solid Builders.png)
 
 ## Introduction
 
 ### About
 
-Solid Builders is a premium Astro template built for creative agencies, studios, and freelancers who want to stand out. With a truly unique design and a flawless 100/100 Google PageSpeed score, Solid Builders combines cutting-edge visuals with best-in-class performance. Whether you're launching a portfolio, agency site, or creative showcase, Solid Builders is the perfect starting point—flexible, fast, and future-ready.
+PhaseLine Painting is a premium Astro template built for painting contractors, service businesses, and professionals who want to showcase their work. With a truly unique design and a flawless 100/100 Google PageSpeed score, PhaseLine Painting combines cutting-edge visuals with best-in-class performance. Whether you're launching a portfolio, service site, or project showcase, PhaseLine Painting is the perfect starting point—flexible, fast, and future-ready.
 
 ### Features
 
 - **14 Pre-Built Pages (and more to come):** Launch your site quickly with a complete set of professionally designed pages ready to go.
-- **Perfect 100/100 PageSpeed Score:** Built for maximum performance and lightning-fast load times, Solid Builders delivers a flawless Google PageSpeed score.
+- **Perfect 100/100 PageSpeed Score:** Built for maximum performance and lightning-fast load times, PhaseLine Painting delivers a flawless Google PageSpeed score.
 - **Modular Block Sections:** All pages are built using flexible, reusable block sections—easily insert, rearrange, or extend with new content from our growing library.
 - **Reusable Components:** Save time and stay consistent with a full suite of customizable, reusable UI components.
-- **Built with Astro v5 & Tailwind CSS v4:** Enjoy the latest development features and speed with Astro’s cutting-edge framework and Tailwind's newest utility-first release.
+- **Built with Astro v5 & Tailwind CSS v4:** Enjoy the latest development features and speed with Astro's cutting-edge framework and Tailwind's newest utility-first release.
 - **Keystatic CMS Integration:** Manage your content visually and inline with the Git-friendly Keystatic CMS—modern, flexible, and developer-approved.
 - **Light & Dark Mode:** Give users full control with a seamless toggle between light and dark themes.
-- **SEO Optimized:** Solid Builders is built with clean, semantic HTML and optimized metadata to boost visibility and search engine ranking.
+- **SEO Optimized:** PhaseLine Painting is built with clean, semantic HTML and optimized metadata to boost visibility and search engine ranking.
 - **Mega Menu Navigation:** Support complex navigation structures with a built-in, responsive mega menu—ideal for large sites.
-- **Content Collections:** Organize and manage your content with Astro’s powerful content collections system.
+- **Content Collections:** Organize and manage your content with Astro's powerful content collections system.
 - **Premium Support via Discord:** Gain access to our private Discord channel for direct support, updates, and guidance.
 - **Free Ongoing Updates:** Your purchase includes regular updates with new features, performance improvements, and refinements.
 
@@ -44,7 +42,7 @@ After downloading the theme, install the dependencies and run it on your local s
 
 ### Folder structure
 
-Inside Solid Builders Astro project, you'll see the following folders and files:
+Inside PhaseLine Painting Astro project, you'll see the following folders and files:
 
 ```plaintext
 /
@@ -136,7 +134,7 @@ However, if you want to give users the ability to switch between themes, you can
 
 ## Content Management
 
-Solid Builders includes Keystatic CMS integration for Case Studies collection management. The configuration can be found in `keystatic.config.ts`, which defines:
+PhaseLine Painting includes Keystatic CMS integration for Case Studies collection management. The configuration can be found in `keystatic.config.ts`, which defines:
 
 - Content collections structure
 - Field configurations
@@ -159,28 +157,6 @@ cloud: {
 
 For more details, see [Keystatic's documentation](https://keystatic.com/docs/introduction).
 
-## Want more themes?
-
-### Foxi Pro
-
-Check out **Foxi Pro**, our premium Astro website template with fully responsive, customizable Tailwind CSS components.
-
-![foxi-pro](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/foxi-pro.png)
-
-[![Get Foxi Pro](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/primary-button-get-foxi-pro.svg)](https://astro.build/themes/details/foxi-pro/)
-[![View live Demo](https://oxygenna-themes.b-cdn.net/foxi-pro-astro/secondary-button-foxi-pro-demo.svg)](https://foxi-pro.netlify.app)
-
-### Milo
-
-Check out **Milo**, a clean and modern resume template for Astro, built with Tailwind CSS, perfect for showcasing your professional profile online.
-
-![milo-theme](https://oxygenna-themes.b-cdn.net/milo-astro/milo-theme-promo.png)
-
-[![Get Milo](https://oxygenna-themes.b-cdn.net/milo-astro/primary-button-get-milo.svg)](https://astro.build/themes/details/milo/)
-[![View live Demo](https://oxygenna-themes.b-cdn.net/milo-astro/secondary-button-milo-demo.svg)](https://milo-theme.netlify.app/)
-
 ## License
 
-Copyright 2025 - Designed & Developed by [Oxygenna](http://www.oxygenna.com/)
-
-[![Hire Us](https://oxygenna-themes.b-cdn.net/foxi-astro/hireus.png)](mailto:themes@oxygenna.com,christos@oxygenna.com)
+Copyright 2025 - PhaseLine Painting

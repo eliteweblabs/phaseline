@@ -1,7 +1,7 @@
 {
 	"footerAbout": {
-		"aboutText": "Tired of boring? Let’s talk.",
-		"aboutLink": "reggie@solidboston.com"
+		"aboutText": "Ready to transform your space? Let's talk.",
+		"aboutLink": "contact@phaselinepainting.com"
 	},
 	"footerColumns": [
 		{
@@ -27,6 +27,6 @@
 		}
 	],
 	"subFooter": {
-		"copywriteText": "Solid Builders"
+		"copywriteText": "PhaseLine Painting"
 	}
 }

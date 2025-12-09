@@ -18,13 +18,13 @@ export default config({
     : {
         kind: 'github',
         repo: {
-          owner: 'eliteweblabs',
-          name: 'solid',
+          owner: '4rgd',
+          name: 'phaseline',
         },
       },
 
   ui: {
-    brand: { name: 'Solid Builders' },
+    brand: { name: 'PhaseLine Painting' },
   },
   collections: {
     blog: collection({

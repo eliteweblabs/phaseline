@@ -29,9 +29,9 @@ const { page } = Astro.props as any
 // Content
 // - SEO
 const SEO = {
-	title: 'Solid Builders | Work Projects',
+	title: 'PhaseLine Painting | Our Work',
 	description:
-		"Explore Solid Builders's latest work projects designed to enhance productivity, ensure top-notch security, and integrate seamlessly with your favorite tools. Join thousands of satisfied users and transform your workflow with Solid Builders today!"
+		"Explore PhaseLine Painting's latest painting projects showcasing quality craftsmanship, attention to detail, and beautiful transformations. See how we've helped transform spaces with professional painting services."
 }
 // Function to sort case studies by date
 const sortedWorkProjects = page.data.sort((a: any, b: any) => {
@@ -42,7 +42,7 @@ const sortedWorkProjects = page.data.sort((a: any, b: any) => {
 <Layout title={SEO.title} description={SEO.description} navigation="sticky">
 	<Hero
 		title="What happens when it all clicks."
-		text="From bold beginnings to finished builds — here’s what happens when design, development, and craftsmanship align."
+		text="From careful preparation to finished projects — here's what happens when quality materials, skilled craftsmanship, and attention to detail align."
 		titleSpan="8"
 		type="vertical"
 	/>

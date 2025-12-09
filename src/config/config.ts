@@ -24,14 +24,14 @@ export interface Config {
 }
 
 export const configData: Config = {
-	siteTitle: 'Solid Boston - We build like we mean it.',
+	siteTitle: 'PhaseLine Painting - Professional Painting Services',
 	siteDescription:
-		'Boston based construction company specializing in residential and commercial construction.',
+		'Professional painting company specializing in residential and commercial painting services.',
 	ogImage: '/og.jpg',
 	logo: {
-		src: '/solid-builders-logo.svg',
-		srcDark: '/solid-builders-logo-dark.svg',
-		alt: 'Site logo'
+		src: '/phaseline-logo.svg',
+		srcDark: '/phaseline-logo-dark.svg',
+		alt: 'PhaseLine Painting logo'
 	},
 	canonical: true,
 	noindex: false,
