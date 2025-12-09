@@ -1,7 +1,7 @@
 {
 	"logo": {
-		"src": "/phaseline-logo.svg",
-		"srcDark": "/phaseline-logo-dark.svg",
+		"src": "/phaseline-logo.png",
+		"srcDark": "/phaseline-log.png",
 		"alt": "The PhaseLine Painting logo"
 	},
 	"navItems": [
