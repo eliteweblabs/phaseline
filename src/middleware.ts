@@ -37,7 +37,8 @@ export const onRequest: MiddlewareHandler = async (context, next) => {
     // Verify OAuth app configuration
     if (url.pathname.includes('/oauth/callback') || url.pathname.includes('/login')) {
       console.log('=== OAuth Configuration Check ===')
-      console.log('Expected Callback URL: https://solid-production.up.railway.app/api/keystatic/github/oauth/callback')
+      const callbackUrl = `${Astro.url.origin}/api/keystatic/github/oauth/callback`
+      console.log('Expected Callback URL:', callbackUrl)
       console.log('Client ID in use:', process.env.KEYSTATIC_GITHUB_CLIENT_ID)
     }
   }
